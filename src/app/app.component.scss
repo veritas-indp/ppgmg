@@ -1,0 +1,21 @@
+@import '../styles';
+
+mat-card {
+    width: 70%;
+    border: 1px lightgray solid;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    color: mat-color($app-primary) !important;
+}
+
+.header {
+    background-color: mat-color($app-primary);
+    width: 100%;
+    height: 100px;
+    color: white;
+}

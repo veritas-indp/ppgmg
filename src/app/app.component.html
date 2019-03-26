@@ -1,0 +1,44 @@
+<div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
+    <div class="header" fxLayoutAlign="center center">
+        <h2>get tripcodes from thread</h2>
+    </div>
+    <mat-card fxLayout.gt-sm="row" fxLayout="column" fxLayoutGap="25px" fxLayoutAlign="center center">
+        <div>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="board" [(ngModel)]="board">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="thread" [(ngModel)]="thread">
+            </mat-form-field>
+        </div>
+        <div>
+            <button mat-fab color="primary" (click)="getTripcodes()">
+                <mat-icon style="color:white;">search</mat-icon>
+            </button>
+        </div>
+    </mat-card>
+    <mat-card fxLayoutAlign="center center">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="tripcode">
+                <th mat-header-cell *matHeaderCellDef> Tripcodes </th>
+                <td mat-cell *matCellDef="let element">
+                    <div *ngFor="let e of element.tripcode">
+                        <p>{{e}}</p>
+                    </div>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+    </mat-card>
+</div>
