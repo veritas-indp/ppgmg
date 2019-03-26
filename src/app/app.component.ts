@@ -9,8 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent {
   title = 'ppg-membergetter';
 
-  board: string = 'bant';
-  thread: number = 7742097;
+  board: string = 'pol';
+  thread: number = 0;
 
   constructor(private http: HttpClient) { }
 
